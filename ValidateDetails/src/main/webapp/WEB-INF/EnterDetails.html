@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Details</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		function validateEmail() {
+			
+			var email=document.myform.email.value;
+
+			
+			
+				 if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
+				  {
+					 var phone = document.forms["myform"]["number"].value;
+				        var phoneNum = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/; 
+				            if(phone.match(phoneNum)) {
+				                return true;
+				            }
+							else
+							{
+							alert("Enter valid number");
+							return false;
+							}
+				  
+				   }
+				   else
+				   {
+				   alert("Invalid email entered");
+				   return (false);
+				   }
+				   
+				   
+				   
+				   
+				 
+ 
+
+
+  }
+		
+	</script>
+
+		<h1>Please Enter your details to proceed further:</h1>
+	<form name="myform" method="post" action="Register.html"
+		onsubmit="return validateEmail()">
+		<table>
+
+			<tr>
+				<td>First Name :</td>
+				<td><input type="text" name="firstname"
+					placeholder="Enter first name" value="" required />
+			</tr>
+
+			<tr>
+				<td>Last Name :</td>
+				<td><input type="text" name="lastname"
+					placeholder="Enter last name" value="" required />
+			</tr>
+
+			<tr>
+				<td>Email :</td>
+				<td><input type="email" name="email" placeholder="Enter email"
+					value="" required /></td>
+			</tr>
+
+
+			<tr>
+				<td>Enter number:</td>
+
+				<td><input type="number" name="number"
+					placeholder="Enter number" value="" required /></td>
+			</tr>
+
+			<tr>
+				<td>Address:</td>
+				<td><textarea name="address" rows="10" cols="30"> </textarea></td>
+			</tr>
+			<tr>
+				<td>City:</td>
+				<td><input type="text" id="city" value=""></td>
+			</tr>
+
+			<tr>
+				<td>State :</td>
+				<td><select id="select1">
+						<option class="new1" value="Rajasthan">Rajasthan</option>
+						<option class="new1" value="Uttar Pradesh">Uttar Pradesh</option>
+						<option class="new1" value="Maharashtra">Maharashtra</option>
+						<option class="new1" value="Tamil Nadu">Tamil Nadu</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>
+					<button type="submit" class="submit">Register Now</button>
+				</td>
+			</tr>
+
+
+
+
+		</table>
+	</form>
+
+
+
+
+</body>
+</html>
